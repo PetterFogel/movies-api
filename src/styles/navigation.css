@@ -1,0 +1,51 @@
+header {
+    background: #222;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem 4rem;
+    height: 7vh;
+}
+
+h2 {
+    color: #fff;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    height: 2rem;
+    border-radius: 1rem;
+    padding-left: 1rem;
+}
+
+form input {
+    width: 20rem;
+    height: 100%;
+    font-size: 1rem;
+    outline: none;
+    border: none;
+}
+
+form i {
+    color: #222;
+    margin: 0rem 0.5rem;
+}
+
+nav {
+    width: 15%;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    list-style: none;
+}
+
+nav ul li {
+    color: #fff;
+}
