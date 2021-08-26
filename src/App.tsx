@@ -1,9 +1,12 @@
 import './App.css';
+import Navigation from './components/layout/navigation';
+import Main from './components/layout/main';
 
 function App() {
   return (
     <div>
-      <h1>Test</h1>
+      <Navigation />
+      <Main />
     </div>
   );
 }
