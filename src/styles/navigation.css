@@ -3,39 +3,18 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0rem 4rem;
+    padding: 0rem 7rem;
     height: 7vh;
 }
 
-h2 {
-    color: #fff;
-}
-
-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #fff;
-    height: 2rem;
-    border-radius: 1rem;
-    padding-left: 1rem;
-}
-
-form input {
-    width: 20rem;
-    height: 100%;
-    font-size: 1rem;
-    outline: none;
-    border: none;
-}
-
-form i {
-    color: #222;
-    margin: 0rem 0.5rem;
+.logo {
+    background: #f3ce13;
+    padding: 0rem 0.5rem;
+    border-radius: 0.4rem;
 }
 
 nav {
-    width: 15%;
+    width: 30%;
 }
 
 nav ul {
