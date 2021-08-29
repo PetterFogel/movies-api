@@ -1,0 +1,32 @@
+.page-title {
+    margin: 1rem;
+    color: #fff;
+}
+
+.movie-list-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.loading {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-top: 5rem;
+    text-align: center;
+    animation: pulse 1000ms infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 0.4;
+    }
+
+    100% {
+        opacity: 0.9;
+    }
+}
