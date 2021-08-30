@@ -6,17 +6,12 @@ import MovieContext from "../../context/movieContext";
 import "../../styles/movieCategory.css";
 
 function MovieCategory() {
-  const { movieList, isLoading, fetchMovies } = useContext(MovieContext);
-  const [error, setError] = useState(false);
+  const { movieList, isLoading, error, fetchMovies } = useContext(MovieContext);
   const [filter, setFilter] = useState("popular");
 
   useEffect(() => {
     fetchMovies(filter);
 
-    if (movieList.length <= 0) {
-      setError(true);
-    }
-    setError(false);
   }, [filter]);
 
   function sortingHandler(category: string) {
@@ -54,7 +49,7 @@ function MovieCategory() {
             ))}
         </div>
       )}
-      {error && <p className="loading">Something went wrong...</p>}
+      {error && <p className="error-msg">Something went wrong... :(</p>}
     </section>
   );
 }
