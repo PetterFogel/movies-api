@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { FormEvent, useState } from "react";
 import { ChangeEvent } from "react";
+import { Movie } from "../../models/movie";
 import MovieContext from "../../context/movieContext";
 import MovieItem from "./movieItem";
 
@@ -32,9 +33,9 @@ function SearchMovie() {
         </button>
       </form>
       {isLoading && <p className="loading">Loading...</p>}
-      {error && <p className="loading">{error}</p> }
+      {error && <p className="error-msg">{error}</p> }
       <div className="movie-list-container">
-        {searchedMovie.map((movie: any) => (
+        {searchedMovie.map((movie: Movie) => (
           <MovieItem {...movie} key={movie.id} />
         ))}
         </div>
