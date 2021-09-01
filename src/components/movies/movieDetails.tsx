@@ -6,7 +6,7 @@ import "../../styles/movieDetails.css";
 
 function MovieDetails() {
   const params = useParams<{ id: string }>();
-  const { specificMovie, isLoading, fetchSpecificMovie } = useContext(MovieContext);
+  const { specificMovie, isLoading, fetchSpecificMovie, addToFavorites } = useContext(MovieContext);
   const moviePoster = `https://image.tmdb.org/t/p/w1280/${specificMovie.poster_path}`;
 
   const genres = specificMovie.genres;
@@ -14,6 +14,10 @@ function MovieDetails() {
   useEffect(() => {
     fetchSpecificMovie(params.id);
   }, []);
+
+  function handleBtnClick() {
+    addToFavorites(specificMovie);
+  }
 
   return (
     <section>
@@ -41,7 +45,7 @@ function MovieDetails() {
               <p>{specificMovie.overview}</p>
             </div>
             <div className="add-btn-holder">
-              <button className="add-btn">
+              <button className="add-btn" onClick={handleBtnClick}>
                 <p className="add-btn-icon">+</p>
                 Add to Favorites
               </button>
