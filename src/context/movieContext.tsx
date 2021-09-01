@@ -9,11 +9,13 @@ interface TypeContextObj {
   movieList: Movie[];
   searchedMovie: Movie[];
   specificMovie: Movie;
+  favoritesList: Movie[];
   isLoading: boolean;
   error: null;
-  fetchMovies: (value: string) => void;
-  searchMovie: (value: string) => void;
+  fetchMovies: (category: string) => void;
+  searchMovie: (title: string) => void;
   fetchSpecificMovie: (id: string) => void;
+  addToFavorites: (movie: Movie) => void;
 }
 
 const MovieContext = createContext<TypeContextObj>({
@@ -25,16 +27,19 @@ const MovieContext = createContext<TypeContextObj>({
     poster_path: "",
     vote_average: "",
   },
+  favoritesList: [],
   isLoading: false,
   error: null,
-  fetchMovies: (value: string) => {},
-  searchMovie: (value: string) => {},
+  fetchMovies: (category: string) => {},
+  searchMovie: (title: string) => {},
   fetchSpecificMovie: (id: string) => {},
+  addToFavorites: (movie: Movie) => {}
 });
 
 export function MovieContextProvider(props: any) {
   const [movies, setMovies] = useState([]);
   const [searchMovie, setSearchMovie] = useState([]);
+  const [favoritesList, setFavoritesList] = useState<Movie[]>([]);
   const [specificMovie, setSpecificMovie] = useState<Movie>({
     id: "",
     title: "",
@@ -123,15 +128,22 @@ export function MovieContextProvider(props: any) {
     }, 1000);
   }
 
+  function addToFavoritesHandler(movie: Movie) {
+    console.log(movie);
+    setFavoritesList([...favoritesList, movie]);
+  }
+
   const context: TypeContextObj = {
     movieList: movies,
     searchedMovie: searchMovie,
     specificMovie: specificMovie,
+    favoritesList,
     isLoading: isFetching,
     error: errorMsg,
     fetchMovies: fetchMoviesHandler,
     searchMovie: searchMovieHandler,
     fetchSpecificMovie: fetchSpecificMovieHandler,
+    addToFavorites: addToFavoritesHandler
   };
 
   return (
