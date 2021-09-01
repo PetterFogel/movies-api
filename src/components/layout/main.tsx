@@ -3,6 +3,7 @@ import MovieCategory from "../movies/movieCategory";
 import { Switch, Route } from "react-router-dom";
 import SearchMovie from "../movies/searchMovie";
 import MovieDetails from "../movies/movieDetails";
+import MovieFavorites from "../movies/movieFavorites";
 
 function Movies() {
   return (
@@ -10,6 +11,9 @@ function Movies() {
       <Switch>
         <Route path="/" exact>
           <MovieCategory />
+        </Route>
+        <Route path="/favorites">
+          <MovieFavorites />
         </Route>
         <Route path="/search-movie">
           <SearchMovie />
