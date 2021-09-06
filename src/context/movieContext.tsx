@@ -33,13 +33,15 @@ const MovieContext = createContext<TypeContextObj>({
   fetchMovies: (category: string) => {},
   searchMovie: (title: string) => {},
   fetchSpecificMovie: (id: string) => {},
-  addToFavorites: (movie: Movie) => {}
+  addToFavorites: (movie: Movie) => {},
 });
 
 export function MovieContextProvider(props: any) {
   const [movies, setMovies] = useState([]);
   const [searchMovie, setSearchMovie] = useState([]);
-  const [favoritesList, setFavoritesList] = useState<Movie[]>([]);
+  const [favoritesList, setFavoritesList] = useState<Movie[]>(
+    JSON.parse(localStorage.getItem("Movies") || "[]")
+  );
   const [specificMovie, setSpecificMovie] = useState<Movie>({
     id: "",
     title: "",
@@ -133,23 +135,24 @@ export function MovieContextProvider(props: any) {
     for (const favorits of favoritesList) {
       if (movie.id === favorits.id) {
         return console.log("already exist");
-      } 
+      }
     }
     const newFavoritesList = [...favoritesList, movie];
     setFavoritesList(newFavoritesList);
+    localStorage.setItem("Movies", JSON.stringify(newFavoritesList));
   }
 
   const context: TypeContextObj = {
     movieList: movies,
     searchedMovie: searchMovie,
     specificMovie: specificMovie,
-    favoritesList,
+    favoritesList: favoritesList,
     isLoading: isFetching,
     error: errorMsg,
     fetchMovies: fetchMoviesHandler,
     searchMovie: searchMovieHandler,
     fetchSpecificMovie: fetchSpecificMovieHandler,
-    addToFavorites: addToFavoritesHandler
+    addToFavorites: addToFavoritesHandler,
   };
 
   return (
