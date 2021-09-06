@@ -110,7 +110,6 @@ export function MovieContextProvider(props: any) {
           `https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}&language=en-US`
         );
         const data = response.data;
-        console.log(data);
         const movieObj: Movie = {
           id: data.id,
           title: data.title,
@@ -119,7 +118,9 @@ export function MovieContextProvider(props: any) {
           overview: data.overview,
           release_date: data.release_date,
           genres: data.genres,
+          // favorit: false
         };
+        console.log(movieObj);
         setSpecificMovie(movieObj);
       } catch (error) {
         console.log(error);
@@ -129,8 +130,13 @@ export function MovieContextProvider(props: any) {
   }
 
   function addToFavoritesHandler(movie: Movie) {
-    console.log(movie);
-    setFavoritesList([...favoritesList, movie]);
+    for (const favorits of favoritesList) {
+      if (movie.id === favorits.id) {
+        return console.log("already exist");
+      } 
+    }
+    const newFavoritesList = [...favoritesList, movie];
+    setFavoritesList(newFavoritesList);
   }
 
   const context: TypeContextObj = {
