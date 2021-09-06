@@ -1,4 +1,4 @@
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { Movie } from "../../models/movie";
 import "../../styles/movieItem.css";
 import MovieCard from "../ui/movieCard";
