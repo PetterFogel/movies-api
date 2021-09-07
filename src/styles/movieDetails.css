@@ -70,10 +70,6 @@
     margin-bottom: 2rem;
 }
 
-.add-btn-holder {
-
-}
-
 .add-btn-icon {
     font-size: 2rem;
     color: #fff;
@@ -94,6 +90,22 @@
     align-items: center;
 }
 
-.add-btn:hover {
+
+.add-btn:hover,
+.remove-btn:hover {
     background: #444;
+}
+
+.remove-btn {
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background: #333;
+    border: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
