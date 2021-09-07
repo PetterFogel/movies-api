@@ -12,6 +12,7 @@ interface TypeContextObj {
   favoritesList: Movie[];
   isLoading: boolean;
   error: null;
+  disabled: boolean;
   fetchMovies: (category: string) => void;
   searchMovie: (title: string) => void;
   fetchSpecificMovie: (id: string) => void;
@@ -30,6 +31,7 @@ const MovieContext = createContext<TypeContextObj>({
   favoritesList: [],
   isLoading: false,
   error: null,
+  disabled: false,
   fetchMovies: (category: string) => {},
   searchMovie: (title: string) => {},
   fetchSpecificMovie: (id: string) => {},
@@ -50,6 +52,7 @@ export function MovieContextProvider(props: any) {
   });
   const [isFetching, setIsFetching] = useState(false);
   const [errorMsg, setErrorMsg] = useState(null);
+  const [disabled, setDisabled] = useState(false);
 
   async function fetchMoviesHandler(category: string) {
     setMovies([]);
@@ -99,6 +102,7 @@ export function MovieContextProvider(props: any) {
   }
 
   async function fetchSpecificMovieHandler(movieId: string) {
+    setDisabled(false);
     setSpecificMovie({
       id: "",
       title: "",
@@ -120,9 +124,13 @@ export function MovieContextProvider(props: any) {
           overview: data.overview,
           release_date: data.release_date,
           genres: data.genres,
-          // favorit: false
         };
         console.log(movieObj);
+        for (const favorite of favoritesList) {
+          if (movieId === favorite.id.toString()) {
+            setDisabled(true);
+          }
+        }
         setSpecificMovie(movieObj);
       } catch (error) {
         console.log(error);
@@ -140,6 +148,7 @@ export function MovieContextProvider(props: any) {
     const newFavoritesList = [...favoritesList, movie];
     setFavoritesList(newFavoritesList);
     localStorage.setItem("Movies", JSON.stringify(newFavoritesList));
+    setDisabled(false);
   }
 
   const context: TypeContextObj = {
@@ -149,6 +158,7 @@ export function MovieContextProvider(props: any) {
     favoritesList: favoritesList,
     isLoading: isFetching,
     error: errorMsg,
+    disabled: disabled,
     fetchMovies: fetchMoviesHandler,
     searchMovie: searchMovieHandler,
     fetchSpecificMovie: fetchSpecificMovieHandler,
