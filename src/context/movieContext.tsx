@@ -17,6 +17,7 @@ interface TypeContextObj {
   searchMovie: (title: string) => void;
   fetchSpecificMovie: (id: string) => void;
   addToFavorites: (movie: Movie) => void;
+  removeFromFavorites: (movie: Movie) => void;
 }
 
 const MovieContext = createContext<TypeContextObj>({
@@ -36,6 +37,7 @@ const MovieContext = createContext<TypeContextObj>({
   searchMovie: (title: string) => {},
   fetchSpecificMovie: (id: string) => {},
   addToFavorites: (movie: Movie) => {},
+  removeFromFavorites: (movie: Movie) => {},
 });
 
 export function MovieContextProvider(props: any) {
@@ -140,15 +142,18 @@ export function MovieContextProvider(props: any) {
   }
 
   function addToFavoritesHandler(movie: Movie) {
-    for (const favorits of favoritesList) {
-      if (movie.id === favorits.id) {
-        return console.log("already exist");
-      }
-    }
     const newFavoritesList = [...favoritesList, movie];
     setFavoritesList(newFavoritesList);
     localStorage.setItem("Movies", JSON.stringify(newFavoritesList));
     setDisabled(false);
+  }
+
+  function removeFromFavoritesHandler(movie: Movie) {
+    const newFavoritesList = favoritesList.filter(
+      (favorite) => favorite.id !== movie.id
+    );
+    setFavoritesList(newFavoritesList);
+    localStorage.setItem("Movies", JSON.stringify(newFavoritesList));
   }
 
   const context: TypeContextObj = {
@@ -163,6 +168,7 @@ export function MovieContextProvider(props: any) {
     searchMovie: searchMovieHandler,
     fetchSpecificMovie: fetchSpecificMovieHandler,
     addToFavorites: addToFavoritesHandler,
+    removeFromFavorites: removeFromFavoritesHandler,
   };
 
   return (
