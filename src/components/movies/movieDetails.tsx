@@ -1,12 +1,10 @@
-import { useContext } from "react";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { useParams } from "react-router";
 import MovieContext from "../../context/movieContext";
 import "../../styles/movieDetails.css";
 
 function MovieDetails() {
   const params = useParams<{ id: string }>();
-  // const [disabled, setDisabled] = useState(false);
   const {
     specificMovie,
     isLoading,
@@ -14,6 +12,7 @@ function MovieDetails() {
     disabled,
     fetchSpecificMovie,
     addToFavorites,
+    removeFromFavorites
   } = useContext(MovieContext);
   const moviePoster = `https://image.tmdb.org/t/p/w1280/${specificMovie.poster_path}`;
 
@@ -23,8 +22,12 @@ function MovieDetails() {
     fetchSpecificMovie(params.id);
   }, [favoritesList]);
 
-  function handleBtnClick() {
+  function addFavoriteHandler() {
     addToFavorites(specificMovie);
+  }
+
+  function removeFavoriteHandler() {
+    removeFromFavorites(specificMovie);
   }
 
   return (
@@ -53,9 +56,13 @@ function MovieDetails() {
               <p>{specificMovie.overview}</p>
             </div>
             <div className="add-btn-holder">
-              {disabled && <p className="error">Exist in favoriteslist</p>}
+              {disabled && (
+                <button className="remove-btn" onClick={removeFavoriteHandler}>
+                  Remove from favorit
+                  </button>
+              )}
               {!disabled && (
-                <button className="add-btn" onClick={handleBtnClick}>
+                <button className="add-btn" onClick={addFavoriteHandler}>
                   <p className="add-btn-icon">+</p>
                   Add to Favorites
                 </button>
