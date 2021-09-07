@@ -6,14 +6,22 @@ import "../../styles/movieDetails.css";
 
 function MovieDetails() {
   const params = useParams<{ id: string }>();
-  const { specificMovie, isLoading, fetchSpecificMovie, addToFavorites } = useContext(MovieContext);
+  // const [disabled, setDisabled] = useState(false);
+  const {
+    specificMovie,
+    isLoading,
+    favoritesList,
+    disabled,
+    fetchSpecificMovie,
+    addToFavorites,
+  } = useContext(MovieContext);
   const moviePoster = `https://image.tmdb.org/t/p/w1280/${specificMovie.poster_path}`;
 
   const genres = specificMovie.genres;
 
   useEffect(() => {
     fetchSpecificMovie(params.id);
-  }, []);
+  }, [favoritesList]);
 
   function handleBtnClick() {
     addToFavorites(specificMovie);
@@ -45,10 +53,13 @@ function MovieDetails() {
               <p>{specificMovie.overview}</p>
             </div>
             <div className="add-btn-holder">
-              <button className="add-btn" onClick={handleBtnClick}>
-                <p className="add-btn-icon">+</p>
-                Add to Favorites
-              </button>
+              {disabled && <p className="error">Exist in favoriteslist</p>}
+              {!disabled && (
+                <button className="add-btn" onClick={handleBtnClick}>
+                  <p className="add-btn-icon">+</p>
+                  Add to Favorites
+                </button>
+              )}
             </div>
           </div>
         </div>
