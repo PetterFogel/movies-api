@@ -17,7 +17,6 @@
 }
 
 .movie-detail-holder {
-    /* flex: 1; */
     color: #fff;
     display: flex;
     flex-direction: column;
@@ -48,13 +47,6 @@
 .rating-title {
     font-size: 3rem;
 }
-
-/* .info-detail-holder {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-bottom: 1rem;
-} */
 
 .genre-holder {
     display: flex;
