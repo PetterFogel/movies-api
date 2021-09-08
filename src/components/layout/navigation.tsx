@@ -6,7 +6,7 @@ function Navigation() {
     <header>
       <h2 className="logo">MovieBox</h2>
       <nav>
-        <ul>
+        <ul className="nav-links">
           <Link to="/" style={{ textDecoration: "none" }}>
             <li>Movies</li>
           </Link>
@@ -18,6 +18,11 @@ function Navigation() {
           </Link>
         </ul>
       </nav>
+        <div className="burger-menu">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
     </header>
   );
 }
