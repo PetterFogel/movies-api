@@ -1,32 +1,17 @@
-.page-title {
-    margin: 1rem;
+.category-btn-holder {
+    margin-bottom: 2rem;
+}
+
+.category-btn {
+    background: #111;
+    border: 3px solid #111;
     color: #fff;
+    padding: 0.4rem 1.6rem;
+    font-size: 0.9rem;
+    outline: none;
+    cursor: pointer;
 }
 
-.movie-list-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
-}
-
-.loading {
-    color: #fff;
-    font-size: 1.5rem;
-    margin-top: 5rem;
-    text-align: center;
-    animation: pulse 1000ms infinite;
-}
-
-@keyframes pulse {
-    0% {
-        opacity: 1;
-    }
-
-    75% {
-        opacity: 0.4;
-    }
-
-    100% {
-        opacity: 0.9;
-    }
+.category-btn:hover {
+    background: #222;
 }
