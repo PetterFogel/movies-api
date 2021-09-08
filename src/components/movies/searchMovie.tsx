@@ -1,9 +1,9 @@
-import { useContext } from "react";
-import { FormEvent, useState } from "react";
-import { ChangeEvent } from "react";
+import { useContext, FormEvent, ChangeEvent, useState } from "react";
 import { Movie } from "../../models/movie";
 import MovieContext from "../../context/movieContext";
 import MovieItem from "./movieItem";
+import "../../styles/Global.css";
+import "../../styles/searchMovie.css";
 
 function SearchMovie() {
   const { searchedMovie, isLoading, error, searchMovie } = useContext(MovieContext);

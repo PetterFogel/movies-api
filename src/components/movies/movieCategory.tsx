@@ -4,6 +4,7 @@ import { useState } from "react";
 import MovieItem from "./movieItem";
 import MovieContext from "../../context/movieContext";
 import "../../styles/movieCategory.css";
+import "../../styles/Global.css";
 
 function MovieCategory() {
   const { movieList, isLoading, error, fetchMovies } = useContext(MovieContext);
