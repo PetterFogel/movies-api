@@ -1,4 +1,3 @@
-import './App.css';
 import Navigation from './components/layout/navigation';
 import Main from './components/layout/main';
 
