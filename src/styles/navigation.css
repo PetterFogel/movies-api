@@ -8,16 +8,14 @@ header {
 }
 
 .logo {
-    background: #f3ce13;
-    padding: 0rem 0.5rem;
-    border-radius: 0.4rem;
+    color: #f3ce13;
 }
 
 nav {
     width: 30%;
 }
 
-nav ul {
+.nav-links {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -25,6 +23,51 @@ nav ul {
     list-style: none;
 }
 
-nav ul li {
+.nav-links li {
     color: #fff;
+}
+
+.burger-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.burger-menu div {
+    width: 30px;
+    height: 2px;
+    background: #fff;
+    margin: 0.3rem;
+}
+
+@media (max-width: 1200px) {
+    header {
+        padding: 0rem 2rem;
+    }
+    nav {
+        width: 35%;
+    }
+}
+
+@media (max-width: 800px) {
+    header {
+        padding: 0rem 3rem;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .burger-menu {
+        display: block;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 0rem 1rem;
+    }
+
+    .logo {
+        font-size: 1.3rem;
+    }
 }
