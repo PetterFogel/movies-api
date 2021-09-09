@@ -54,7 +54,17 @@ nav {
     }
 
     .nav-links {
-        display: none;
+        position: fixed;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        background: #111;
+        z-index: 100;
+        top: 7vh;
+        width: 50%;
+        height: 93vh;
+        right: 0%;
+        transition: right 700ms ease-in-out;
     }
 
     .burger-menu {
@@ -65,6 +75,11 @@ nav {
 @media (max-width: 600px) {
     header {
         padding: 0rem 1rem;
+    }
+
+    .nav-links {
+        width: 100%;
+        transition: right 500ms ease-in;
     }
 
     .logo {
