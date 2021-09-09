@@ -4,3 +4,9 @@ main {
     align-items: center;
     margin: 2rem 0rem;
 }
+
+@media (max-width: 600px) {
+    main {
+        margin: 1rem 0rem;
+    }
+}
