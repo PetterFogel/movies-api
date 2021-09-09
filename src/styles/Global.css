@@ -55,4 +55,12 @@ section {
     .movie-list-container {
         grid-template-columns: repeat(1, 1fr);
     }
+
+    .error-msg {
+        font-size: 0.9rem;
+    }
+
+    .loading {
+        font-size: 1.2rem;
+    }
 }
