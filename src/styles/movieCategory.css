@@ -15,3 +15,14 @@
 .category-btn:hover {
     background: #222;
 }
+
+@media (max-width: 600px) {
+    .category-btn-holder {
+        margin-bottom: 1rem;
+    }
+
+    .category-btn {
+        padding: 0.4rem 0.88rem;
+        font-size: 0.7rem;
+    }
+}
