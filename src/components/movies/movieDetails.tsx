@@ -20,6 +20,8 @@ function MovieDetails() {
 
   useEffect(() => {
     fetchSpecificMovie(params.id);
+    console.log(genres);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [favoritesList]);
 
   function addFavoriteHandler() {
@@ -49,7 +51,7 @@ function MovieDetails() {
             <div className="genre-holder">
               Genre:
               {genres?.map((genre: any) => (
-                <p className="genre-title">{genre.name}</p>
+                <p className="genre-title" key={genre.name}>{genre.name}</p>
               ))}
             </div>
             <div className="overview-holder">

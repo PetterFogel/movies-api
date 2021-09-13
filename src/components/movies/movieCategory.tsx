@@ -13,6 +13,7 @@ function MovieCategory() {
   useEffect(() => {
     fetchMovies(filter);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filter]);
 
   function sortingHandler(category: string) {
