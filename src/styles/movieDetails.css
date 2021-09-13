@@ -101,3 +101,143 @@
     justify-content: center;
     align-items: center;
 }
+
+@media (max-width: 1300px) {
+    .details-container {
+        width: 90%;
+    }
+
+    .image-detail-holder img {
+        width: 17rem;
+        height: auto;
+    }
+
+    .details-title {
+        font-size: 2.5rem;
+    }
+
+    .rating-icon {
+        font-size: 2rem;
+    }
+    
+    .rating-title {
+        font-size: 2.5rem;
+    }
+
+    .overview-holder p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .details-container {
+        width: 100%;
+    }
+
+    .image-detail-holder img {
+        width: 15rem;
+    }
+
+    .title-detail-holder {
+        margin-bottom: 1.2rem;
+    }
+
+    .details-title {
+        font-size: 2rem;
+    }
+
+    .rating-icon {
+        font-size: 1.5rem;
+    }
+    
+    .rating-title {
+        font-size: 2rem;
+    }
+
+    .genre-holder {
+        font-size: 0.9rem;
+        margin-bottom: 1.1rem;
+    }
+    
+    .genre-title {
+        margin: 0rem 0.5rem;
+    }
+
+    .overview-holder p {
+        font-size: 0.8rem;
+    }
+
+    .remove-btn,
+    .add-btn {
+        font-size: 0.8rem;
+    }
+
+    .add-btn-icon {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .details-container {
+        padding: 3rem;
+    }
+
+    .image-detail-holder img {
+        width: 15rem;
+    }
+
+    .details-title {
+        font-size: 2rem;
+    }
+
+    .rating-icon {
+        font-size: 1.5rem;
+    }
+    
+    .rating-title {
+        font-size: 2rem;
+    }
+
+    .overview-holder p {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 700px) {
+    .details-container {
+        width: 100%;
+        padding: 1rem 3rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .image-detail-holder img {
+        width: 10rem;
+        margin-bottom: 2rem;
+    }
+
+    .details-title {
+        font-size: 1.5rem;
+    }
+
+    .rating-icon {
+        font-size: 1rem;
+    }
+    
+    .rating-title {
+        font-size: 1.5rem;
+    }
+
+    .overview-holder p {
+        font-size: 0.7rem;
+    }
+
+    .genre-holder {
+        font-size: 0.7rem;
+        margin-bottom: 1rem;
+    }
+    
+    .genre-title {
+        margin: 0rem 0.3rem;
+    }
+}
