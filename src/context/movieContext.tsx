@@ -66,7 +66,6 @@ export function MovieContextProvider(props: any) {
           `https://api.themoviedb.org/3/movie/${category}?api_key=${API_KEY}&language=en-US&page=1`
         );
         const data = response.data.results;
-        console.log(data);
         if (data.length <= 0) {
           throw Error("Something went wrong... :(");
         }
@@ -89,7 +88,6 @@ export function MovieContextProvider(props: any) {
           `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&page=1&include_adult=false&query=${movieTitle}`
         );
         const data = response.data.results;
-        console.log(data);
         if (data.length <= 0) {
           throw Error(`Movie "${movieTitle}" was not found... :(`);
         }
@@ -127,7 +125,6 @@ export function MovieContextProvider(props: any) {
           release_date: data.release_date,
           genres: data.genres,
         };
-        console.log(movieObj);
         for (const favorite of favoritesList) {
           if (movieId === favorite.id.toString()) {
             setDisabled(true);
