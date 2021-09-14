@@ -51,7 +51,7 @@ function MovieDetails() {
             <div className="genre-holder">
               Genre:
               {genres?.map((genre: any) => (
-                <p className="genre-title" key={genre.name}>{genre.name}</p>
+                <p className="genre-title" key={genre.id}>{genre.name}</p>
               ))}
             </div>
             <div className="overview-holder">
