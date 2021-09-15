@@ -10,4 +10,4 @@ It's created with a simple desgin and is responsive.
 
 ## netlify
 
-## Watch demo [here](https://moviebox-api.netlify.app/)
+Click [here](https://moviebox-api.netlify.app/) for demo.
