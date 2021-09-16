@@ -20,9 +20,11 @@ section {
     animation: pulse 1000ms infinite;
 }
 
-.error-msg {
+.error-msg,
+.empty-msg {
     color: #fff;
     font-size: 1.5rem;
+    margin: 3rem;
 }
 
 @keyframes pulse {
@@ -56,7 +58,8 @@ section {
         grid-template-columns: repeat(1, 1fr);
     }
 
-    .error-msg {
+    .error-msg,
+    .empty-msg {
         font-size: 0.9rem;
     }
 
