@@ -20,7 +20,6 @@ function MovieDetails() {
 
   useEffect(() => {
     fetchSpecificMovie(params.id);
-    console.log(genres);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [favoritesList]);
 
