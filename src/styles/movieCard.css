@@ -8,3 +8,15 @@
     box-shadow: 2px 3px 10px #000;
     border-radius: 0.5rem;
 }
+
+@media (max-width: 800px) {
+    .card-container {
+        width: 10rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .card-container {
+        width: 8rem;
+    }
+}
