@@ -27,3 +27,23 @@
     padding: 0.2rem;
     font-size: 0.9rem;
 }
+
+@media (max-width: 800px) {
+    .title {
+        font-size: 0.7rem;
+    }
+
+    .rating {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .title {
+        font-size: 0.5rem;
+    }
+
+    .rating {
+        font-size: 0.5rem;
+    }
+}
