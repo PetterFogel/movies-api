@@ -1,9 +1,9 @@
-import { useContext, useEffect } from "react";
+import { FC, useContext, useEffect } from "react";
 import { useParams } from "react-router";
 import MovieContext from "../../context/movieContext";
 import "../../styles/movieDetails.css";
 
-export const  MovieDetails = () => {
+export const  MovieDetails: FC = () => {
   const params = useParams<{ id: string }>();
   const {
     specificMovie,

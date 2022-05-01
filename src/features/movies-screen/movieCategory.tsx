@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { FC, useEffect } from "react";
 import { useContext } from "react";
 import { useState } from "react";
 import MovieContext from "../../context/movieContext";
@@ -6,13 +6,12 @@ import "../../styles/movieCategory.css";
 import "../../styles/Global.css";
 import { MovieItem } from "./movieItem";
 
-export const MovieCategory = () => {
+export const MovieCategory: FC = () => {
   const { movieList, isLoading, error, fetchMovies } = useContext(MovieContext);
   const [filter, setFilter] = useState("popular");
   const [popular, setPopular] = useState(false);
   const [toprated, setToprated] = useState(false);
   const [upcoming, setUpcoming] = useState(false);
-  // const [active, setActive] = useState(false);
 
   useEffect(() => {
     fetchMovies(filter);

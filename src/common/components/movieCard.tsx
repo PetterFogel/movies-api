@@ -1,11 +1,14 @@
+import { FC } from "react";
 import "../../styles/movieCard.css";
 
-function MovieCard(props: any) {
+type MovieCardProps = {
+    children: any
+}
+
+export const MovieCard: FC<MovieCardProps> = ({ children }) => {
     return (
         <div className="card-container">
-            {props.children}
+            {children}
         </div>
     );
 }
-
-export default MovieCard;

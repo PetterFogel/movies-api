@@ -4,8 +4,9 @@ import { MovieCategory } from "../features/movies-screen/movieCategory";
 import { MovieFavorites } from "../features/favorites-screen/movieFavorites";
 import { SearchMovie } from "../features/search-screen/searchMovie";
 import { MovieDetails } from "../features/movies-screen/movieDetails";
+import { FC } from "react";
 
-export const AppRoutes = () => {
+export const AppRoutes: FC = () => {
   return (
     <main>
       <Switch>

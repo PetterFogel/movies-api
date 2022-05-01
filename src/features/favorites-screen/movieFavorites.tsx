@@ -1,8 +1,8 @@
-import { useContext, useEffect, useState } from "react"
+import { FC, useContext, useEffect, useState } from "react"
 import MovieContext from "../../context/movieContext"
 import { MovieItem } from "../movies-screen/movieItem";
 
-export const MovieFavorites = () => {
+export const MovieFavorites: FC = () => {
     const [isEmpty, setIsEmpty] = useState(false);
     const { favoritesList } = useContext(MovieContext);
 
