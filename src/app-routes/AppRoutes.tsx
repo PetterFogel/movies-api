@@ -1,17 +1,17 @@
-import "../styles/main.css";
+import { FC } from "react";
 import { Switch, Route } from "react-router-dom";
-import { MovieCategory } from "../features/movies-screen/movieCategory";
 import { MovieFavorites } from "../features/favorites-screen/movieFavorites";
 import { SearchMovie } from "../features/search-screen/searchMovie";
 import { MovieDetails } from "../features/movies-screen/movieDetails";
-import { FC } from "react";
+import { MoviesScreen } from "../features/movies-screen/MoviesScreen";
+import "../styles/main.css";
 
 export const AppRoutes: FC = () => {
   return (
     <main>
       <Switch>
         <Route path="/" exact>
-          <MovieCategory />
+          <MoviesScreen />
         </Route>
         <Route path="/favorites">
           <MovieFavorites />

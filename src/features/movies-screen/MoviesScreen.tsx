@@ -6,7 +6,7 @@ import "../../styles/movieCategory.css";
 import "../../styles/Global.css";
 import { MovieItem } from "./movieItem";
 
-export const MovieCategory: FC = () => {
+export const MoviesScreen: FC = () => {
   const { movieList, isLoading, error, fetchMovies } = useContext(MovieContext);
   const [filter, setFilter] = useState("popular");
   const [popular, setPopular] = useState(false);
