@@ -5,7 +5,7 @@ import SearchMovie from "../movies/searchMovie";
 import MovieDetails from "../movies/movieDetails";
 import MovieFavorites from "../movies/movieFavorites";
 
-function Movies() {
+export const AppRoutes = () => {
   return (
     <main>
       <Switch>
@@ -25,5 +25,3 @@ function Movies() {
     </main>
   );
 }
-
-export default Movies;

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import "../../styles/navigation.css";
 
-function Navigation() {
+export const Header = () => {
   const [toggle, setToggle] = useState(false);
 
   function navToggleHandler() {
@@ -54,5 +54,3 @@ function Navigation() {
     </header>
   );
 }
-
-export default Navigation;
