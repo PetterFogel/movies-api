@@ -10,7 +10,7 @@ export const MovieFavorites: FC = () => {
             {favoritesList.length <= 0 && <p className="empty-msg">Please add a movie to your favorite list.</p>}
             <div className="movie-list-container">
                 {favoritesList.map((movie) => (
-                    <MovieItem {...movie} key={movie.id} />
+                    <MovieItem movie={movie} key={movie.id} />
                 ))}
             </div>
         </section>

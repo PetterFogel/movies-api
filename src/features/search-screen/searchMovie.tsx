@@ -36,7 +36,7 @@ export const  SearchMovie: FC = () => {
       {error && <p className="error-msg">{error}</p> }
       <div className="movie-list-container">
         {searchedMovie.map((movie: Movie) => (
-          <MovieItem {...movie} key={movie.id} />
+          <MovieItem movie={movie} key={movie.id} />
         ))}
         </div>
     </section>
