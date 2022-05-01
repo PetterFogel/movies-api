@@ -1,11 +1,11 @@
 import { useContext, FormEvent, ChangeEvent, useState } from "react";
 import { Movie } from "../../models/movie";
 import MovieContext from "../../context/movieContext";
-import MovieItem from "./movieItem";
 import "../../styles/Global.css";
 import "../../styles/searchMovie.css";
+import { MovieItem } from "./movieItem";
 
-function SearchMovie() {
+export const  SearchMovie = () => {
   const { searchedMovie, isLoading, error, searchMovie } = useContext(MovieContext);
   const [inputValue, setInputValue] = useState("");
 
@@ -42,5 +42,3 @@ function SearchMovie() {
     </section>
   );
 }
-
-export default SearchMovie;

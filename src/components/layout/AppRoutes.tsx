@@ -1,9 +1,9 @@
 import "../../styles/main.css";
-import MovieCategory from "../movies/movieCategory";
 import { Switch, Route } from "react-router-dom";
-import SearchMovie from "../movies/searchMovie";
-import MovieDetails from "../movies/movieDetails";
-import MovieFavorites from "../movies/movieFavorites";
+import { MovieCategory } from "../movies/movieCategory";
+import { MovieFavorites } from "../movies/movieFavorites";
+import { SearchMovie } from "../movies/searchMovie";
+import { MovieDetails } from "../movies/movieDetails";
 
 export const AppRoutes = () => {
   return (

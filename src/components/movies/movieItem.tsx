@@ -3,7 +3,7 @@ import { Movie } from "../../models/movie";
 import "../../styles/movieItem.css";
 import MovieCard from "../ui/movieCard";
 
-function MovieItem(props: Movie) {
+export const MovieItem = (props: Movie) => {
   const history = useHistory();
   const moviePoster = `https://image.tmdb.org/t/p/w1280/${props.poster_path}`;
 
@@ -26,5 +26,3 @@ function MovieItem(props: Movie) {
     </MovieCard>
   );
 }
-
-export default MovieItem;

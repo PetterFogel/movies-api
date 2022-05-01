@@ -3,7 +3,7 @@ import { useParams } from "react-router";
 import MovieContext from "../../context/movieContext";
 import "../../styles/movieDetails.css";
 
-function MovieDetails() {
+export const  MovieDetails = () => {
   const params = useParams<{ id: string }>();
   const {
     specificMovie,
@@ -75,5 +75,3 @@ function MovieDetails() {
     </section>
   );
 }
-
-export default MovieDetails;

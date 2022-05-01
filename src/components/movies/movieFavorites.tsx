@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from "react"
 import MovieContext from "../../context/movieContext"
-import MovieItem from "./movieItem";
+import { MovieItem } from "./movieItem";
 
-function MovieFavorites() {
+export const MovieFavorites = () => {
     const [isEmpty, setIsEmpty] = useState(false);
     const { favoritesList } = useContext(MovieContext);
 
@@ -24,5 +24,3 @@ function MovieFavorites() {
         </section>
     )   
 }
-
-export default MovieFavorites
