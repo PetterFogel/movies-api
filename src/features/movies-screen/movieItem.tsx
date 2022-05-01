@@ -1,7 +1,7 @@
 import { useHistory } from "react-router-dom";
 import { Movie } from "../../models/movie";
 import "../../styles/movieItem.css";
-import MovieCard from "../ui/movieCard";
+import MovieCard from "../../common/components/movieCard";
 
 export const MovieItem = (props: Movie) => {
   const history = useHistory();

@@ -3,7 +3,7 @@ import { Movie } from "../../models/movie";
 import MovieContext from "../../context/movieContext";
 import "../../styles/Global.css";
 import "../../styles/searchMovie.css";
-import { MovieItem } from "./movieItem";
+import { MovieItem } from "../movies-screen/movieItem";
 
 export const  SearchMovie = () => {
   const { searchedMovie, isLoading, error, searchMovie } = useContext(MovieContext);

@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react"
 import MovieContext from "../../context/movieContext"
-import { MovieItem } from "./movieItem";
+import { MovieItem } from "../movies-screen/movieItem";
 
 export const MovieFavorites = () => {
     const [isEmpty, setIsEmpty] = useState(false);
