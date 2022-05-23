@@ -1,28 +1,31 @@
+/** @format */
+
 .category-btn-holder {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
+  background: red;
 }
 
 .category-btn {
-    background: #111;
-    border: 3px solid #111;
-    color: #fff;
-    padding: 0.4rem 1.6rem;
-    font-size: 0.9rem;
-    outline: none;
-    cursor: pointer;
+  background: #111;
+  border: 3px solid #111;
+  color: #fff;
+  padding: 0.4rem 1.6rem;
+  font-size: 0.9rem;
+  outline: none;
+  cursor: pointer;
 }
 
 .category-btn:hover {
-    background: #222;
+  background: #222;
 }
 
 @media (max-width: 600px) {
-    .category-btn-holder {
-        margin-bottom: 1rem;
-    }
+  .category-btn-holder {
+    margin-bottom: 1rem;
+  }
 
-    .category-btn {
-        padding: 0.4rem 0.88rem;
-        font-size: 0.7rem;
-    }
+  .category-btn {
+    padding: 0.6rem 1.3rem;
+    font-size: 0.7rem;
+  }
 }
