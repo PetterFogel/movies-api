@@ -2,10 +2,10 @@
 
 import { FC } from "react";
 import { Switch, Route } from "react-router-dom";
-import { MoviesScreen } from "../features/movies-screen/MoviesScreen";
-import { SearchMovie } from "../features/search-screen/SearchMovie";
 import { MovieFavorites } from "../features/favorites-screen/MovieFavorites";
 import { MovieDetails } from "../features/movies-screen/MovieDetails";
+import { MoviesScreen } from "../features/movies-screen/MoviesScreen";
+import { SearchMovie } from "../features/search-screen/SearchMovie";
 import "../styles/main.css";
 
 export const AppRoutes: FC = () => {
