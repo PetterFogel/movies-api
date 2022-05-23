@@ -2,10 +2,11 @@
 
 import { FC } from "react";
 import { Switch, Route } from "react-router-dom";
-import { MovieFavorites } from "../features/favorites-screen/MovieFavorites";
+import { FavoritesScreen } from "../features/favorites-screen/FavoritesScreen";
 import { MovieDetails } from "../features/movies-screen/MovieDetails";
 import { MoviesScreen } from "../features/movies-screen/MoviesScreen";
-import { SearchMovie } from "../features/search-screen/SearchMovie";
+import { SearchScreen } from "../features/search-screen/SearchScreen";
+
 import "../styles/main.css";
 
 export const AppRoutes: FC = () => {
@@ -16,10 +17,10 @@ export const AppRoutes: FC = () => {
           <MoviesScreen />
         </Route>
         <Route path="/favorites">
-          <MovieFavorites />
+          <FavoritesScreen />
         </Route>
         <Route path="/search-movie">
-          <SearchMovie />
+          <SearchScreen />
         </Route>
         <Route path="/movie-details/:id">
           <MovieDetails />

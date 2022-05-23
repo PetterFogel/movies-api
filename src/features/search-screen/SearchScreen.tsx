@@ -7,7 +7,7 @@ import MovieContext from "../../context/movieContext";
 import "../../styles/Global.css";
 import "../../styles/searchMovie.css";
 
-export const SearchMovie: FC = () => {
+export const SearchScreen: FC = () => {
   const { searchedMovie, isLoading, error, searchMovie } =
     useContext(MovieContext);
   const [inputValue, setInputValue] = useState("");

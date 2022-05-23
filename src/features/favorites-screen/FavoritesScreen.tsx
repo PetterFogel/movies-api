@@ -4,7 +4,7 @@ import { FC, useContext } from "react";
 import { MovieItem } from "../movies-screen/MovieItem";
 import MovieContext from "../../context/movieContext";
 
-export const MovieFavorites: FC = () => {
+export const FavoritesScreen: FC = () => {
   const { favoritesList } = useContext(MovieContext);
 
   return (
