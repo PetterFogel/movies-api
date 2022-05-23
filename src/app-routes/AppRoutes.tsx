@@ -21,9 +21,9 @@ export const AppRoutes: FC = () => {
         <Route path="/search-movie">
           <SearchMovie />
         </Route>
-        <Route path="/movie-details/:id">
+        {/* <Route path="/movie-details/:id">
           <MovieDetails />
-        </Route>
+        </Route> */}
       </Switch>
     </main>
   );
