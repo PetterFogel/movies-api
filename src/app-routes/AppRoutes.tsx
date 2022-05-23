@@ -15,15 +15,15 @@ export const AppRoutes: FC = () => {
         <Route path="/" exact>
           <MoviesScreen />
         </Route>
-        {/* <Route path="/favorites">
+        <Route path="/favorites">
           <MovieFavorites />
-        </Route> */}
-        {/* <Route path="/search-movie">
+        </Route>
+        <Route path="/search-movie">
           <SearchMovie />
-        </Route> */}
-        {/* <Route path="/movie-details/:id">
+        </Route>
+        <Route path="/movie-details/:id">
           <MovieDetails />
-        </Route> */}
+        </Route>
       </Switch>
     </main>
   );
