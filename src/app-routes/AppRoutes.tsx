@@ -3,10 +3,9 @@
 import { FC } from "react";
 import { Switch, Route } from "react-router-dom";
 import { FavoritesScreen } from "../features/favorites-screen/FavoritesScreen";
-import { MovieDetails } from "../features/movies-screen/MovieDetails";
+import { MovieItemDetails } from "../features/movies-screen/MovieItemDetails";
 import { MoviesScreen } from "../features/movies-screen/MoviesScreen";
 import { SearchScreen } from "../features/search-screen/SearchScreen";
-
 import "../styles/main.css";
 
 export const AppRoutes: FC = () => {
@@ -23,7 +22,7 @@ export const AppRoutes: FC = () => {
           <SearchScreen />
         </Route>
         <Route path="/movie-details/:id">
-          <MovieDetails />
+          <MovieItemDetails />
         </Route>
       </Switch>
     </main>

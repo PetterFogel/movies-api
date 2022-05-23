@@ -5,7 +5,7 @@ import { useParams } from "react-router";
 import MovieContext from "../../context/movieContext";
 import "../../styles/movieDetails.css";
 
-export const MovieDetails: FC = () => {
+export const MovieItemDetails: FC = () => {
   const params = useParams<{ id: string }>();
   const {
     specificMovie,
