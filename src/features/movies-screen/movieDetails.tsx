@@ -1,9 +1,11 @@
+/** @format */
+
 import { FC, useContext, useEffect } from "react";
 import { useParams } from "react-router";
 import MovieContext from "../../context/movieContext";
 import "../../styles/movieDetails.css";
 
-export const  MovieDetails: FC = () => {
+export const MovieDetails: FC = () => {
   const params = useParams<{ id: string }>();
   const {
     specificMovie,
@@ -12,7 +14,7 @@ export const  MovieDetails: FC = () => {
     disabled,
     fetchSpecificMovie,
     addToFavorites,
-    removeFromFavorites
+    removeFromFavorites,
   } = useContext(MovieContext);
   const moviePoster = `https://image.tmdb.org/t/p/w1280/${specificMovie.poster_path}`;
 
@@ -20,7 +22,7 @@ export const  MovieDetails: FC = () => {
 
   useEffect(() => {
     fetchSpecificMovie(params.id);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [favoritesList]);
 
   function addFavoriteHandler() {
@@ -50,7 +52,9 @@ export const  MovieDetails: FC = () => {
             <div className="genre-holder">
               Genre:
               {genres?.map((genre: any) => (
-                <p className="genre-title" key={genre.id}>{genre.name}</p>
+                <p className="genre-title" key={genre.id}>
+                  {genre.name}
+                </p>
               ))}
             </div>
             <div className="overview-holder">
@@ -60,7 +64,7 @@ export const  MovieDetails: FC = () => {
               {disabled && (
                 <button className="remove-btn" onClick={removeFavoriteHandler}>
                   Remove from favorit
-                  </button>
+                </button>
               )}
               {!disabled && (
                 <button className="add-btn" onClick={addFavoriteHandler}>
@@ -74,4 +78,4 @@ export const  MovieDetails: FC = () => {
       )}
     </section>
   );
-}
+};

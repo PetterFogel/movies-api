@@ -1,12 +1,15 @@
+/** @format */
+
 import { useContext, FormEvent, ChangeEvent, useState, FC } from "react";
 import { Movie } from "../../models/movie";
+import { MovieItem } from "../movies-screen/MovieItem";
 import MovieContext from "../../context/movieContext";
 import "../../styles/Global.css";
 import "../../styles/searchMovie.css";
-import { MovieItem } from "../movies-screen/movieItem";
 
-export const  SearchMovie: FC = () => {
-  const { searchedMovie, isLoading, error, searchMovie } = useContext(MovieContext);
+export const SearchMovie: FC = () => {
+  const { searchedMovie, isLoading, error, searchMovie } =
+    useContext(MovieContext);
   const [inputValue, setInputValue] = useState("");
 
   function onChangeHandler(e: ChangeEvent<HTMLInputElement>) {
@@ -33,12 +36,12 @@ export const  SearchMovie: FC = () => {
         </button>
       </form>
       {isLoading && <p className="loading">Loading...</p>}
-      {error && <p className="error-msg">{error}</p> }
+      {error && <p className="error-msg">{error}</p>}
       <div className="movie-list-container">
         {searchedMovie.map((movie: Movie) => (
           <MovieItem movie={movie} key={movie.id} />
         ))}
-        </div>
+      </div>
     </section>
   );
-}
+};

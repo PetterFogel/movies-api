@@ -1,18 +1,22 @@
-import { FC, useContext } from "react"
-import MovieContext from "../../context/movieContext"
-import { MovieItem } from "../movies-screen/movieItem";
+/** @format */
+
+import { FC, useContext } from "react";
+import { MovieItem } from "../movies-screen/MovieItem";
+import MovieContext from "../../context/movieContext";
 
 export const MovieFavorites: FC = () => {
-    const { favoritesList } = useContext(MovieContext);
+  const { favoritesList } = useContext(MovieContext);
 
-    return (
-        <section>
-            {favoritesList.length <= 0 && <p className="empty-msg">Please add a movie to your favorite list.</p>}
-            <div className="movie-list-container">
-                {favoritesList.map((movie) => (
-                    <MovieItem movie={movie} key={movie.id} />
-                ))}
-            </div>
-        </section>
-    )   
-}
+  return (
+    <section>
+      {favoritesList.length <= 0 && (
+        <p className="empty-msg">Please add a movie to your favorite list.</p>
+      )}
+      <div className="movie-list-container">
+        {favoritesList.map((movie) => (
+          <MovieItem movie={movie} key={movie.id} />
+        ))}
+      </div>
+    </section>
+  );
+};

@@ -1,3 +1,5 @@
+/** @format */
+
 import axios from "axios";
 import { useState } from "react";
 import { createContext } from "react";
@@ -11,7 +13,7 @@ interface TypeContextObj {
   specificMovie: Movie;
   favoritesList: Movie[];
   isLoading: boolean;
-  error: null;
+  error: string | null;
   disabled: boolean;
   fetchMovies: (category: string) => void;
   searchMovie: (title: string) => void;
@@ -53,11 +55,10 @@ export function MovieContextProvider(props: any) {
     vote_average: "",
   });
   const [isFetching, setIsFetching] = useState(false);
-  const [errorMsg, setErrorMsg] = useState(null);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [disabled, setDisabled] = useState(false);
 
   async function fetchMoviesHandler(category: string) {
-    setMovies([]);
     setErrorMsg(null);
     setIsFetching(true);
     setTimeout(async () => {
@@ -65,14 +66,16 @@ export function MovieContextProvider(props: any) {
         const response = await axios.get(
           `https://api.themoviedb.org/3/movie/${category}?api_key=${API_KEY}&language=en-US&page=1`
         );
+
         const data = response.data.results;
         if (data.length <= 0) {
           throw Error("Something went wrong... :(");
         }
         setMovies(data);
       } catch (error) {
-        console.log(error.message);
-        setErrorMsg(error.message);
+        if (error instanceof Error) {
+          setErrorMsg(error.message);
+        }
       }
       setIsFetching(false);
     }, 1000);
@@ -93,9 +96,9 @@ export function MovieContextProvider(props: any) {
         }
         setSearchMovie(data);
       } catch (error) {
-        console.log(error.message);
-        setSearchMovie([]);
-        setErrorMsg(error.message);
+        if (error instanceof Error) {
+          setErrorMsg(error.message);
+        }
       }
       setIsFetching(false);
     }, 1000);

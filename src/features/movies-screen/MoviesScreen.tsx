@@ -1,79 +1,61 @@
+/** @format */
+
 import { FC, useEffect } from "react";
 import { useContext } from "react";
 import { useState } from "react";
+import { checkPickedCateGoryHandler } from "../../common/functions/checkPickedCategoryHandler/checkPickedCategoryHandler";
+import { MovieList } from "./MovieList";
 import MovieContext from "../../context/movieContext";
 import "../../styles/movieCategory.css";
 import "../../styles/Global.css";
-import { MovieItem } from "./movieItem";
 
 export const MoviesScreen: FC = () => {
   const { movieList, isLoading, error, fetchMovies } = useContext(MovieContext);
   const [filter, setFilter] = useState("popular");
-  const [popular, setPopular] = useState(false);
-  const [toprated, setToprated] = useState(false);
-  const [upcoming, setUpcoming] = useState(false);
 
   useEffect(() => {
     fetchMovies(filter);
-
-    if (filter === "popular") {
-      setPopular(true);
-      setToprated(false);
-      setUpcoming(false);
-    } 
-    if (filter === "top_rated") {
-      setPopular(false);
-      setToprated(true);
-      setUpcoming(false);
-    } 
-    if (filter === "upcoming") {
-      setPopular(false);
-      setToprated(false);
-      setUpcoming(true);
-    } 
-
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filter]);
 
-  function sortingHandler(category: string) {
+  const sortingHandler = (category: string) => {
     setFilter(category);
-  }
+  };
+
+  if (error) return <p className="error-msg">Something went wrong... :(</p>;
 
   return (
     <section>
       <div className="category-btn-holder">
         <button
           className="category-btn"
-          style={{ background: popular ? "#222" : "#111" }}
+          style={{ background: checkPickedCateGoryHandler(filter, "popular") }}
           onClick={() => sortingHandler("popular")}
         >
           Popular
         </button>
         <button
           className="category-btn"
-          style={{ background: toprated ? "#222" : "#111" }}
+          style={{
+            background: checkPickedCateGoryHandler(filter, "top_rated"),
+          }}
           onClick={() => sortingHandler("top_rated")}
         >
           Top Rated
         </button>
         <button
           className="category-btn"
-          style={{ background: upcoming ? "#222" : "#111" }}
+          style={{ background: checkPickedCateGoryHandler(filter, "upcoming") }}
           onClick={() => sortingHandler("upcoming")}
         >
           Upcoming
         </button>
       </div>
 
-      {isLoading && <p className="loading">Loading...</p>}
-      {!error && (
-        <div className="movie-list-container">
-          {movieList.map((movie: any) => (
-            <MovieItem {...movie} key={movie.id} />
-            ))}
-        </div>
+      {isLoading ? (
+        <p className="loading">Loading...</p>
+      ) : (
+        <MovieList movies={movieList} />
       )}
-      {error && <p className="error-msg">Something went wrong... :(</p>}
     </section>
   );
-}
+};

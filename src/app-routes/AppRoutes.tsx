@@ -1,9 +1,11 @@
+/** @format */
+
 import { FC } from "react";
 import { Switch, Route } from "react-router-dom";
-import { MovieFavorites } from "../features/favorites-screen/movieFavorites";
-import { SearchMovie } from "../features/search-screen/searchMovie";
-import { MovieDetails } from "../features/movies-screen/movieDetails";
+import { SearchMovie } from "../features/search-screen/SearchMovie";
 import { MoviesScreen } from "../features/movies-screen/MoviesScreen";
+import { MovieFavorites } from "../features/favorites-screen/MovieFavorites";
+import { MovieDetails } from "../features/movies-screen/MovieDetails";
 import "../styles/main.css";
 
 export const AppRoutes: FC = () => {
@@ -25,4 +27,4 @@ export const AppRoutes: FC = () => {
       </Switch>
     </main>
   );
-}
+};
