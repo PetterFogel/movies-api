@@ -15,6 +15,7 @@ export const MoviesScreen: FC = () => {
 
   useEffect(() => {
     fetchMovies(filter);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filter]);
 
   const sortingHandler = (category: string) => {
