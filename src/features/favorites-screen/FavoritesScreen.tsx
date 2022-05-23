@@ -1,8 +1,8 @@
 /** @format */
 
 import { FC, useContext } from "react";
-import { MovieItems } from "../movies-screen/MovieItem";
 import MovieContext from "../../context/movieContext";
+import { MovieItems } from "../movies-screen/MovieItems";
 
 export const FavoritesScreen: FC = () => {
   const { favoritesList } = useContext(MovieContext);

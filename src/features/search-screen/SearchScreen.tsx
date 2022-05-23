@@ -2,7 +2,7 @@
 
 import { useContext, FormEvent, ChangeEvent, useState, FC } from "react";
 import { Movie } from "../../models/movie";
-import { MovieItems } from "../movies-screen/MovieItem";
+import { MovieItems } from "../movies-screen/MovieItems";
 import MovieContext from "../../context/movieContext";
 import "../../styles/Global.css";
 import "../../styles/searchMovie.css";

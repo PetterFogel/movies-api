@@ -2,7 +2,7 @@
 
 import { FC } from "react";
 import { Movie } from "../../models/movie";
-import { MovieItems } from "./MovieItem";
+import { MovieItems } from "./MovieItems";
 
 type MovieListProps = {
   movies: Movie[];
