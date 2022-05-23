@@ -18,9 +18,9 @@ export const AppRoutes: FC = () => {
         {/* <Route path="/favorites">
           <MovieFavorites />
         </Route> */}
-        <Route path="/search-movie">
+        {/* <Route path="/search-movie">
           <SearchMovie />
-        </Route>
+        </Route> */}
         {/* <Route path="/movie-details/:id">
           <MovieDetails />
         </Route> */}
