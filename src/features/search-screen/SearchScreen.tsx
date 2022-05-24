@@ -2,7 +2,7 @@
 
 import { useContext, FormEvent, ChangeEvent, useState, FC } from "react";
 import { Movie } from "../../models/movie";
-import { MovieItems } from "../movies-screen/MovieItems";
+import { MovieItem } from "../movies-screen/MovieItem";
 import MovieContext from "../../context/movieContext";
 import "../../styles/Global.css";
 import "../../styles/searchMovie.css";
@@ -39,7 +39,7 @@ export const SearchScreen: FC = () => {
       {error && <p className="error-msg">{error}</p>}
       <div className="movie-list-container">
         {searchedMovie.map((movie: Movie) => (
-          <MovieItems movie={movie} key={movie.id} />
+          <MovieItem movie={movie} key={movie.id} />
         ))}
       </div>
     </section>

@@ -10,7 +10,7 @@ type MovieItemProps = {
   movie: Movie;
 };
 
-export const MovieItems: FC<MovieItemProps> = ({ movie }) => {
+export const MovieItem: FC<MovieItemProps> = ({ movie }) => {
   const history = useHistory();
   const moviePoster = `https://image.tmdb.org/t/p/w1280/${movie.poster_path}`;
 

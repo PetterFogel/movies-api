@@ -1,8 +1,8 @@
 /** @format */
 
 import { FC, useContext } from "react";
+import { MovieItem } from "../movies-screen/MovieItem";
 import MovieContext from "../../context/movieContext";
-import { MovieItems } from "../movies-screen/MovieItems";
 
 export const FavoritesScreen: FC = () => {
   const { favoritesList } = useContext(MovieContext);
@@ -14,7 +14,7 @@ export const FavoritesScreen: FC = () => {
       )}
       <div className="movie-list-container">
         {favoritesList.map((movie) => (
-          <MovieItems movie={movie} key={movie.id} />
+          <MovieItem movie={movie} key={movie.id} />
         ))}
       </div>
     </section>
