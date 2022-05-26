@@ -6,35 +6,14 @@ import { MovieItem } from "../movies-screen/MovieItem";
 import MovieContext from "../../context/movieContext";
 import "../../styles/Global.css";
 import "../../styles/searchMovie.css";
+import { SearchForm } from "./SearchForm";
 
 export const SearchScreen: FC = () => {
-  const { searchedMovie, isLoading, error, searchMovie } =
-    useContext(MovieContext);
-  const [inputValue, setInputValue] = useState("");
-
-  function onChangeHandler(e: ChangeEvent<HTMLInputElement>) {
-    setInputValue(e.target.value);
-  }
-
-  function handleSubmit(e: FormEvent) {
-    e.preventDefault();
-    searchMovie(inputValue);
-    setInputValue("");
-  }
+  const { searchedMovie, isLoading, error } = useContext(MovieContext);
 
   return (
     <section>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Search Movie..."
-          value={inputValue}
-          onChange={onChangeHandler}
-        />
-        <button className="search-btn-icon">
-          <i className="fas fa-search"></i>
-        </button>
-      </form>
+      <SearchForm />
       {isLoading && <p className="loading">Loading...</p>}
       {error && <p className="error-msg">{error}</p>}
       <div className="movie-list-container">
