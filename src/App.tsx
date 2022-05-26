@@ -1,5 +1,7 @@
+/** @format */
+
 import { FC } from "react";
-import { Header } from "./common/components/Header";
+import { Header } from "./common/components/header/Header";
 import { AppRoutes } from "./app-routes/AppRoutes";
 
 export const App: FC = () => {
@@ -9,5 +11,4 @@ export const App: FC = () => {
       <AppRoutes />
     </>
   );
-}
-
+};

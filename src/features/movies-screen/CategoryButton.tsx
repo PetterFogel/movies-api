@@ -1,7 +1,7 @@
 /** @format */
 
 import { FC } from "react";
-import { checkPickedCateGoryHandler } from "../../common/functions/checkPickedCategoryHandler/checkPickedCategoryHandler";
+import { checkPickedCategory } from "../../common/functions/check-picked-category/checkPickedCategoryHandler";
 
 type CategoryButtonProps = {
   label: string;
@@ -19,7 +19,7 @@ export const CategoryButton: FC<CategoryButtonProps> = ({
   return (
     <button
       className="category-btn"
-      style={{ background: checkPickedCateGoryHandler(category, buttonValue) }}
+      style={{ background: checkPickedCategory(category, buttonValue) }}
       onClick={() => onCategoryClick(buttonValue)}
     >
       {label}

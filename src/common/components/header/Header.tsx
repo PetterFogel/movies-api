@@ -2,7 +2,7 @@
 
 import { FC, useState } from "react";
 import { Link } from "react-router-dom";
-import "../../styles/navigation.css";
+import "../../../styles/navigation.css";
 
 export const Header: FC = () => {
   const [toggle, setToggle] = useState(false);
