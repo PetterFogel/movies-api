@@ -13,9 +13,8 @@ export const SearchScreen: FC = () => {
   return (
     <section>
       <SearchForm />
-      {isLoading && <p className="loading">Loading...</p>}
+      {isLoading ? <p className="loading">Loading...</p> : <SearchList />}
       {error && <p className="error-msg">{error}</p>}
-      <SearchList />
     </section>
   );
 };
