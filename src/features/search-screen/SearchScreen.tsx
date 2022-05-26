@@ -2,10 +2,11 @@
 
 import { useContext, FC } from "react";
 import { SearchForm } from "./SearchForm";
+import { SearchList } from "./SearchList";
+import { Loader } from "../../common/components/loader/Loader";
 import MovieContext from "../../context/movieContext";
 import "../../styles/Global.css";
 import "../../styles/searchMovie.css";
-import { SearchList } from "./SearchList";
 
 export const SearchScreen: FC = () => {
   const { isLoading, error } = useContext(MovieContext);
@@ -13,7 +14,7 @@ export const SearchScreen: FC = () => {
   return (
     <section>
       <SearchForm />
-      {isLoading ? <p className="loading">Loading...</p> : <SearchList />}
+      {isLoading ? <Loader /> : <SearchList />}
       {error && <p className="error-msg">{error}</p>}
     </section>
   );

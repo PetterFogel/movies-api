@@ -7,6 +7,7 @@ import { MovieList } from "./MovieList";
 import { MovieCategoryPanel } from "./MovieCategoryPanel";
 import MovieContext from "../../context/movieContext";
 import "../../styles/Global.css";
+import { Loader } from "../../common/components/loader/Loader";
 
 export const MoviesScreen: FC = () => {
   const { movieList, isLoading, error, fetchMovies } = useContext(MovieContext);
@@ -29,11 +30,7 @@ export const MoviesScreen: FC = () => {
         category={category}
         onCategoryClick={categoryHandler}
       />
-      {isLoading ? (
-        <p className="loading">Loading...</p>
-      ) : (
-        <MovieList movies={movieList} />
-      )}
+      {isLoading ? <Loader /> : <MovieList movies={movieList} />}
     </section>
   );
 };
