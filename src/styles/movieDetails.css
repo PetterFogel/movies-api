@@ -1,5 +1,6 @@
 .details-container {
   display: grid;
+  gap: 1rem;
   grid-template-columns: repeat(2, 1fr);
   padding: 1rem;
   width: 70%;
@@ -102,12 +103,8 @@
 }
 
 @media (max-width: 1300px) {
-  .details-container {
-    width: 90%;
-  }
-
   .image-detail-holder img {
-    width: 17rem;
+    width: 100%;
     height: auto;
   }
 
@@ -205,13 +202,12 @@
 @media (max-width: 700px) {
   .details-container {
     width: 100%;
-    padding: 1rem 3rem;
+    padding: 1rem 2rem;
     display: flex;
     flex-direction: column;
   }
 
   .image-detail-holder img {
-    width: 10rem;
     margin-bottom: 2rem;
   }
 
